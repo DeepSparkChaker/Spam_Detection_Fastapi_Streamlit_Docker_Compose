@@ -9,6 +9,7 @@ In this section we overview our selected method for engineering our solution. CR
 
 1-You will find my complete work for Ml "Fraud detection" by following those notebooks :
 
+
 https://www.kaggle.com/bannourchaker/frauddetection-part1-eda
 
 https://www.kaggle.com/bannourchaker/frauddetection-part2-preparation
@@ -132,6 +133,7 @@ https://github.com/tlary/genre-streamlit
 # Ml Monitoring : 
 
 https://neptune.ai/blog/how-to-monitor-your-models-in-production-guide
+
 https://neptune.ai/blog/best-ml-experiment-tracking-tools
 
 
@@ -167,12 +169,18 @@ https://github.com/RihabFekii/streamlit-app/blob/master/docker-compose.yml
 
 https://davidefiocco.github.io/streamlit-fastapi-ml-serving/
 
+https://github.com/tlary/fastapi_titanic
+
+https://tlary.github.io/post/fastapi/
+
 # Deploy bert sentiment Analysis : 
+
 https://ledatascientist.com/deployer-rapidement-des-modeles-de-ml-avec-fastapi/
 
 # Complete Nlp as a service  fastapi ,docker , streamlit , pytorch : 
 https://github.com/abhimishra91/insight
 
+https://discuss.streamlit.io/t/project-insight-streamlit-fastapi-huggingface-and-all-the-goodness/4978
 
 # Deploy streamlit+ fast api + docker composer to heroku : 
 
@@ -184,6 +192,8 @@ https://pythonrepo.com/repo/davidefiocco-streamlit-fastapi-model-serving
 
 https://github.com/davidefiocco/streamlit-fastapi-model-serving
 https://github.com/davidefiocco/streamlit-fastapi-model-serving
+
+https://github.com/RihabFekii/streamlit-app
 
 
 # FraudDetection_V2_Fastapi

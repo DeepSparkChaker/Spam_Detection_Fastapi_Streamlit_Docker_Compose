@@ -39,10 +39,47 @@ Then to run again your application, use this command:
 
 "docker-compose up -d" , "docker-compose up -d --build"
 
+# Docker Advices to enhance : 
+
+			Create a Dockerfile
+
+			In order to use docker, you need to first create a Dockerfile in the main directory with the following code.
+
+			# Use python as base image
+			FROM python:3.6-stretch
+
+			# Use working directory /app/model
+			WORKDIR /app/model
+
+			# Copy and install required packages
+			COPY requirements.txt .
+			RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
+			# Copy all the content of current directory to working directory
+			COPY . .
+
+			# Set env variables for Cloud Run
+			ENV PORT 80
+			ENV HOST 0.0.0.0
+
+			EXPOSE 80:80
+
+			# Run flask app
+			CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
+
+The Dockerfile is a text document that contains commands used to assemble the image.
+
+Therefore, just paste the code below inside. Creating a Dockerfile it's worth to have in mind a couple of best practices:
+
+    1- Layer with requirements.txt installation needs to be above the layer where you copy model files. Thank to that approach, each time when you will change something in your model, docker will rebuild the image without installing dependencies again.
+    2- Use more specific tags and dependency versions. It will prevent you from failure when new library updates are released.
+    3- Change the working directory for your files, don't work in the root.
+
 
 
  
-links : 
+Links :
+ 
 https://tlary.github.io/post/fastapi/
 
 https://github.com/tlary/fastapi_titanic/tree/main/app
@@ -52,6 +89,8 @@ https://github.com/davidefiocco/streamlit-fastapi-model-serving
 https://github.com/RihabFekii/streamlit-app/blob/master/docker-compose.yml
 
 https://testdriven.io/blog/fastapi-streamlit/
+
+
 # Deploy streamlit+ fast api + docker composer to heroku : 
 
 https://github.com/davidefiocco/streamlit-fastapi-model-serving
@@ -63,6 +102,17 @@ https://testdriven.io/blog/fastapi-streamlit/
 https://pythonrepo.com/repo/davidefiocco-streamlit-fastapi-model-serving
 
 https://github.com/davidefiocco/streamlit-fastapi-model-serving
+
+https://github.com/RihabFekii/streamlit-app
+
+https://discuss.streamlit.io/t/project-insight-streamlit-fastapi-huggingface-and-all-the-goodness/4978
+
+https://github.com/tlary/fastapi_titanic
+
+https://tlary.github.io/post/fastapi/
+
+
+
 
 
 http://102.157.162.189:8501
